@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.dailycalorie.cast">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Matrimony">
+        <activity
+            android:name="com.dailycalorie.cast.Forecast.ForecastActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.dailycalorie.cast.Activity.Weather.WeatherActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.dailycalorie.cast.FavDestination.MapdesActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.dailycalorie.cast.FavDestination.FavDestinationActivity"
+            android:exported="true" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name="com.dailycalorie.cast.Activity.CurrentLoc.MapActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.dailycalorie.cast.Activity.CurrentLoc.CurrentLocActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.dailycalorie.cast.compass.CompassActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.dailycalorie.cast.Activity.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Fragments.Values.ValuesActivityE" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>
