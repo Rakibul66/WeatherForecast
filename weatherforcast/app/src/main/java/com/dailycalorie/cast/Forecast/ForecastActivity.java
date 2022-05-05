@@ -1,10 +1,10 @@
 package com.dailycalorie.cast.Forecast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -23,16 +23,16 @@ import java.util.List;
 public class ForecastActivity extends AppCompatActivity {
     private static final String API_KEY = "df07195ad38e7d3cbb2f448d3aec3285"; //api key
 
-    Button btnSearch;
+    AppCompatButton btnSearch;
     EditText etCityName;
     ImageView iconWeather;
     TextView tvTemp, tvCity;
     ListView lvDailyWeather;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forecast);
-
 
 
         btnSearch = findViewById(R.id.btnSearch);
@@ -42,7 +42,7 @@ public class ForecastActivity extends AppCompatActivity {
         tvCity = findViewById(R.id.tvCity);
         lvDailyWeather = findViewById(R.id.lvDailyWeather);
 
-  //search city name
+        //search city name
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,7 +57,8 @@ public class ForecastActivity extends AppCompatActivity {
         });
 
     }
- //load data from api only city name
+
+    //load data from api only city name
     private void loadWeatherByCityName(String city) {
         String apiUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&appid=" + API_KEY;
         Ion.with(this)
@@ -95,7 +96,7 @@ public class ForecastActivity extends AppCompatActivity {
     //load api from api key
 
     private void loadDailyForecast(double lon, double lat) {
-        String apiUrl = "https://api.openweathermap.org/data/2.5/onecall?lat="+lat+"&lon="+lon+"&exclude=hourly,minutely,current&units=metric&appid=" + API_KEY;
+        String apiUrl = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=hourly,minutely,current&units=metric&appid=" + API_KEY;
         Ion.with(this)
                 .load(apiUrl)
                 .asJsonObject()
@@ -110,7 +111,8 @@ public class ForecastActivity extends AppCompatActivity {
                             List<Weather> weatherList = new ArrayList<>();
                             String timeZone = result.get("timezone").getAsString();
                             JsonArray daily = result.get("daily").getAsJsonArray();
-                            for(int i=1;i<daily.size();i++) {
+                            for (int i = 1; i < daily.size(); i++) {
+
                                 Long date = daily.get(i).getAsJsonObject().get("dt").getAsLong();
                                 Double temp = daily.get(i).getAsJsonObject().get("temp").getAsJsonObject().get("day").getAsDouble();
                                 String icon = daily.get(i).getAsJsonObject().get("weather").getAsJsonArray().get(0).getAsJsonObject().get("icon").getAsString();

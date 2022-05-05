@@ -11,9 +11,9 @@ import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
+import com.dailycalorie.cast.R;
 import com.dailycalorie.cast.Activity.Weather.WeatherActivity;
 import com.dailycalorie.cast.Forecast.ForecastActivity;
-import com.dailycalorie.cast.R;
 
 
 public class FragmentRoutine extends Fragment {
@@ -25,7 +25,7 @@ public class FragmentRoutine extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_routine, container, false);
+        view = inflater.inflate(R.layout.fragment_weather, container, false);
 
      weather=view.findViewById(R.id.weather); //define id
      forecast=view.findViewById(R.id.Fav);

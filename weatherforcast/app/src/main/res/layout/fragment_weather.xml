@@ -33,7 +33,7 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@color/svg4">
+                    android:background="@color/svg3">
 
 
                     <TextView

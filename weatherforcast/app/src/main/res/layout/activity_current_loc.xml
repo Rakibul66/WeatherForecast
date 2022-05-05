@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_margin="10dp"
     android:orientation="vertical"
-    tools:context=".Activity.CurrentLoc.CurrentLocActivity">
+    tools:context="com.dailycalorie.cast.Activity.CurrentLoc.CurrentLocActivity">
 
     <Button
         android:id="@+id/buttonGetLocation"
@@ -15,6 +15,7 @@
         android:drawableLeft="@drawable/ic_baseline_add_location_alt_24"
         android:layout_width="match_parent"
         android:layout_margin="@dimen/font_size_18"
+        android:backgroundTint="@color/svg3"
         android:layout_height="wrap_content"
         android:text="Get Location" />
 
@@ -97,6 +98,7 @@
         android:drawablePadding="@dimen/font_size_18"
         android:drawableLeft="@drawable/ic_baseline_map_24"
         android:layout_width="match_parent"
+        android:backgroundTint="@color/svg3"
         android:layout_margin="@dimen/font_size_18"
         android:layout_height="wrap_content"
         android:text="Open Map" />

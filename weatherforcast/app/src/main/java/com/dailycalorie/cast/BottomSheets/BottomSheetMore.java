@@ -10,9 +10,11 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
+
+import com.dailycalorie.cast.R;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.dailycalorie.cast.Activity.MainActivity;
-import com.dailycalorie.cast.R;
+
 
 public class BottomSheetMore extends BottomSheetDialogFragment {
 

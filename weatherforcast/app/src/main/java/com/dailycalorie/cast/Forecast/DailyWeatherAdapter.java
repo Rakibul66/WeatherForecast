@@ -14,18 +14,18 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-
 import com.dailycalorie.cast.R;
 import com.koushikdutta.ion.Ion;
 
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+
 //weather adapter class
 class DailyWeatherAdapter extends ArrayAdapter<Weather> {
 
     private Context context;
-    private List<Weather>  weatherList;
+    private List<Weather> weatherList;
 
     public DailyWeatherAdapter(@NonNull Context context, @NonNull List<Weather> weatherList) {
         super(context, 0, weatherList);
@@ -43,14 +43,15 @@ class DailyWeatherAdapter extends ArrayAdapter<Weather> {
         ImageView iconWeather = convertView.findViewById(R.id.iconWeather);
 
         Weather weather = weatherList.get(position);
-        tvTemp.setText(weather.getTemp()+" °C");
+        tvTemp.setText(weather.getTemp() + " °C");
 
         Ion.with(context)
                 .load("http://openweathermap.org/img/w/" + weather.getIcon() + ".png")
                 .intoImageView(iconWeather);
 
-        Date date = new Date(weather.getDate()*1000);
-        DateFormat dateFormat = new SimpleDateFormat("EEE, MMM yy", Locale.ENGLISH);
+        Date date = new Date(weather.getDate() * 1000);
+
+        DateFormat dateFormat = new SimpleDateFormat("EEE, dd MMMM", Locale.ENGLISH);
         dateFormat.setTimeZone(TimeZone.getTimeZone(weather.getTimeZone()));
         tvDate.setText(dateFormat.format(date));
 

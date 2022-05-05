@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Activity.Weather.WeatherActivity"
+    tools:context="com.dailycalorie.cast.Activity.Weather.WeatherActivity"
     android:orientation="vertical"
     android:padding="16dp">
     <TextView
@@ -12,47 +12,76 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:fontFamily="sans-serif-condensed-medium"
-        android:textSize="30sp"
-        android:text="Weather Update"/>
+        android:textSize="20sp"
+        android:textColor="@color/svg3"
+        android:text="Weather Today"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        android:weightSum="100">
+
+        <EditText
+            android:id="@+id/etCity"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="2dp"
+            android:layout_weight="70"
+            android:background="@drawable/border_edittext"
+            android:ems="10"
+            android:hint="Search"
+            android:inputType="textPersonName"
+            android:padding="6dp"
+            android:textColor="@color/colorBlack"
+            android:textColorHint="@color/colorBlack" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnGet"
+            android:layout_width="0dp"
+            android:textColor="@color/colorWhite"
+            android:layout_height="45dp"
+            android:layout_weight="30"
+            android:onClick="getWeatherDetails"
+            android:background="@drawable/background_button"
+            android:text="Search" />
+
+    </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical">
-        <ImageView
-            android:layout_width="200dp"
-            android:src="@drawable/weather"
-            android:layout_height="140dp">
 
-        </ImageView>
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/etCity"
-            android:layout_marginBottom="10dp"
-            android:ems="10"
-            android:hint="Enter City Name"
-            android:inputType="textPersonName" />
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/etCountry"
-            android:layout_marginBottom="10dp"
-            android:ems="10"
-            android:hint="Enter Country Code (Optional)"
-            android:inputType="textPersonName" />
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnGet"
-            android:layout_marginBottom="10dp"
-            android:fontFamily="sans-serif-condensed-medium"
-            android:background="@color/svg1"
-            android:textColor="@android:color/white"
-            android:onClick="getWeatherDetails"
-            android:text="Get"
-            app:backgroundTint="@null" />
+<!--        <EditText-->
+<!--            android:id="@+id/etCity"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:ems="10"-->
+<!--            android:hint="Search"-->
+<!--            android:inputType="textPersonName"-->
+<!--            android:padding="6dp"-->
+<!--            android:textColor="@color/colorBlack"-->
+<!--            android:textColorHint="@color/colorBlack" />-->
+
+<!--        <Button-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id="@+id/btnGet"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:fontFamily="sans-serif-condensed-medium"-->
+<!--            android:background="@color/svg3"-->
+<!--            android:textColor="@android:color/white"-->
+<!--            android:onClick="getWeatherDetails"-->
+<!--            android:text="Get"-->
+<!--            app:backgroundTint="@null" />-->
+
+
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="150dp">
@@ -64,6 +93,30 @@
                 android:fontFamily="sans-serif-condensed-medium"
                 android:id="@+id/tvResult" />
         </ScrollView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:background="@drawable/bottom_nav_background"
+            android:layout_margin="8dp"
+            android:padding="8dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="match_parent"
+                android:text="Recent Search"
+                android:drawableRight="@drawable/ic_search"
+                android:textColor="@color/svg3"
+                android:drawableTint="@color/colorBlack"
+                android:textSize="@dimen/font_size_18"
+                android:layout_height="wrap_content">
+
+            </TextView>
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/cityList"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
         <View
             android:layout_width="match_parent"
             android:layout_height="0dp"

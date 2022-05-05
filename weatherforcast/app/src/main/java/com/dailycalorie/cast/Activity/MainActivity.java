@@ -6,11 +6,10 @@ import androidx.fragment.app.Fragment;
 import android.os.Bundle;
 import android.widget.ImageView;
 
+import com.dailycalorie.cast.R;
 import com.dailycalorie.cast.Fragments.FragmentRoutine;
 import com.ismaeldivita.chipnavigation.ChipNavigationBar;
-import com.dailycalorie.cast.BottomSheets.BottomSheetMore;
 import com.dailycalorie.cast.Fragments.FragmentHome;
-import com.dailycalorie.cast.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -45,10 +44,10 @@ public class MainActivity extends AppCompatActivity {
                                 selectedFragment).commit();
                         break;
 
-                    case R.id.nav_more: //for bottom sheet
-                        BottomSheetMore bottomSheetMore = new BottomSheetMore();
-                        bottomSheetMore.show(getSupportFragmentManager(), "More");
-                        break;
+//                    case R.id.nav_more: //for bottom sheet
+//                        BottomSheetMore bottomSheetMore = new BottomSheetMore();
+//                        bottomSheetMore.show(getSupportFragmentManager(), "More");
+//                        break;
                 }
             }
         });
